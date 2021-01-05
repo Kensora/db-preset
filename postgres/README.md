@@ -19,3 +19,10 @@
 |-|-|-|
 |PGADMIN_DEFAULT_EMAIL|string|User email of PGAdmin account|
 |PGADMIN_DEFAULT_PASSWORD|string|Password of PGAdmin account|
+
+# Backup
+
+For backup data run next command:
+```
+docker exec -it postgres_container pg_dump -Uadmin --column-inserts --data-only postgres > .\data\backup\<data>.sql
+```

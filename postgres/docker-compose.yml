@@ -1,25 +1,37 @@
 version: '3.8'
 
+networks:
+  guard-db:
+    name: guard-db
+    driver: bridge
+
 services:
   postgres:
     restart: always
-    ports:
-      - 5554:5432
+    container_name: "postgres_container"
     build:
       context: .
       dockerfile: Dockerfile.postgres
     env_file:
       - ./env/postgres.dev.env
+    ports:
+      - 5554:5432
+    networks:
+      - guard-db
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
+      - ./sql/init/:/docker-entrypoint-initdb.d/
   pgadmin:
     restart: always
-    ports:
-      - "8000:80"
+    container_name: "pgadmin_container"
     build:
       context: .
       dockerfile: Dockerfile.pgadmin
     env_file:
       - ./env/pgadmin.dev.env
+    ports:
+      - 8000:80
+    networks:
+      - guard-db
     volumes:
       - ./data/pgadmin:/var/lib/pgadmin

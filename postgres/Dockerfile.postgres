@@ -1,7 +1,3 @@
 FROM postgres:latest
 
-ENV PG_DATA=/var/lib/postgresql/data
-
-COPY ./sql/updates/ /docker-entrypoint-initdb.d/
-
 EXPOSE 5432
