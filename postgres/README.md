@@ -20,6 +20,10 @@
 |PGADMIN_DEFAULT_EMAIL|string|User email of PGAdmin account|
 |PGADMIN_DEFAULT_PASSWORD|string|Password of PGAdmin account|
 
+# How to start
+
+For start serve PostrgeSQL server and PG Admin run command `docker-compose up`.
+
 # Backup
 
 For backup data run next command:
