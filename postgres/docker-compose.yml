@@ -30,8 +30,6 @@ services:
     env_file:
       - ./env/pgadmin.dev.env
     ports:
-      - 8000:80
+      - 5050:80
     networks:
       - guard-db
-    volumes:
-      - ./data/pgadmin:/var/lib/pgadmin
