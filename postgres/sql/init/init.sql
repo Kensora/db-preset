@@ -14,7 +14,7 @@ $$;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TYPE guard.user_status AS ENUM ('ACTIVE', 'DELETED', 'PENDING');
 
-CREATE TABLE IF NOT EXISTS guard.user (
+CREATE TABLE IF NOT EXISTS guard.users (
   id uuid NOT NULL DEFAULT uuid_generate_v4(),
   login text NOT NULL,
   password text NOT NULL,
