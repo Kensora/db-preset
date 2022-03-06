@@ -1,3 +1,3 @@
-# guard-db
+# db-preset
 
-Сommon solution for deploying the database for the Guard projects
+Сommon solution for deploying the database

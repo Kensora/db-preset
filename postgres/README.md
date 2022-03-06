@@ -1,4 +1,4 @@
-# guard-db
+# postgre-db
 
 Сommon solution for Postgre SQL database
 
